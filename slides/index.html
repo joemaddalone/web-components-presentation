@@ -47,7 +47,7 @@
           <h1>HTML Imports</h1>
           <h2>Externalize element code</h2>
           <pre><code class="hljs">
-            <link rel="import" href="name-tag.html" />
+            &lt;link rel="import" href="name-tag.html" />
           </code></pre>
         </section>
         <section>
@@ -155,7 +155,7 @@
           <h1>Polyfills</h1>
           <h2>webcomponents.js</h2>
           <pre><code class="hljs">
-            <script src="/webcomponents.min.js"></script>
+            &lt;script src="/webcomponents.min.js"></script>
           </code></pre>
           <p>formerly Polymer's platform.js</p>
         </section>
@@ -211,7 +211,7 @@ customElements.define('name-tag', class extends HTMLElement {
     transition: Reveal.getQueryHash().transition || 'default',
     // Optional reveal.js plugins
         dependencies: [
-          { src: '/bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
         ]
   });
 </script>
