@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>React</title>
+    <link rel="import" href="name-tag.html" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="/lib/react.min.js"></script>
+    <script src="/lib/react-dom.min.js"></script>
+    <script src="/lib/browser.min.js"></script>
+    <script type="text/babel">
+      class App extends React.Component {
+        render(){
+          let people = [
+            {"name": "Walter"},
+            {"name": "Jesse"},
+            {"name": "Saul"}
+          ]
+          let tags = people.map( person => <name-tag>{person.name}</name-tag>)
+          return <div>{tags}</div>
+        }
+      }
+      ReactDOM.render(<App />, document.getElementById('app'))
+    </script>
+  </body>
+</html>

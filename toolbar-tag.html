@@ -1,0 +1,52 @@
+<template>
+  <style>
+    div {
+      display: flex;
+      height: 50px;
+    }
+    button {
+      outline: 0;
+      border:0;
+      background-color: #eee;
+      font-family: monospace;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size:1.4rem;
+      width: 33%;
+    }
+    .active {
+      background-color: red;
+      color: #fff;
+    }
+  </style>
+  <div>
+    <button id="people" class="active">People</button>
+    <button id="starships">Ships</button>
+    <button id="planets">Planets</button>
+  </div>
+</template>
+<script>
+  (() => {
+    let doc = document.currentScript.ownerDocument
+    document.registerElement( 'toolbar-tag', class extends HTMLElement {
+      attachedCallback() {
+        let shadow = this.createShadowRoot();
+        let template = doc.querySelector( 'template' );
+        shadow.innerHTML = template.innerHTML;
+        shadow.querySelectorAll( 'button' ).forEach( btn => {
+          btn.addEventListener( 'click', ( e ) => {
+            this.setActive(e.target.id, shadow);
+          } );
+        } )
+      }
+
+      setActive( id, shadow ){
+        document.getElementById( this.getAttribute('target') )
+          .setAttribute( 'url', `http://swapi.co/api/${id}/?format=json` );
+        shadow.querySelectorAll( 'button' )
+          .forEach( btn => btn.classList.remove('active'));
+        shadow.getElementById(id).classList.add('active');
+      }
+    } );
+  })()
+</script>

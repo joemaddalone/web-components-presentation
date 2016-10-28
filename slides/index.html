@@ -1,0 +1,219 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="bower_components/reveal.js/css/theme/moon.css">
+    <link rel="stylesheet" href="bower_components/reveal.js/lib/css/zenburn.css">
+    <style>
+      h1, h2 {
+        text-transform: none !important;
+      }
+    </style>
+  </head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>com·po·nent</h1>
+        <p>(/kəmˈpōnənt/)</p>
+        <p><i>noun:</i><br />a part or element of a larger whole.</p>
+      </section>
+      <section>
+        <h1>The Web Components Platform</h1>
+        <h2 class="fragment">Custom Elements</h2>
+        <h2 class="fragment">Shadow DOM</h2>
+        <h2 class="fragment">HTML Imports</h2>
+        <h2 class="fragment">Templates</h2>
+      </section>
+      <section>
+        <section>
+          <h1>Custom Elements</h1>
+          <h2>Create your own HTML elements</h2>
+          <pre><code class="hljs">
+            <name-tag>
+              <h1>Hi, my name is</h1>
+              <h2>Joe</h2>
+            </name-tag>
+          </code></pre>
+        </section>
+        <section>
+          <h1>Shadow DOM</h1>
+          <h2>Encapsulate markup, style, and behavior</h2>
+          <pre><code class="hljs">
+            let shadow = this.createShadowRoot()
+            shadow.innerHTML = '<h1>Hi, my name is</h1><h2>Joe</h2>'
+          </code></pre>
+        </section>
+        <section>
+          <h1>HTML Imports</h1>
+          <h2>Externalize element code</h2>
+          <pre><code class="hljs">
+            <link rel="import" href="name-tag.html" />
+          </code></pre>
+        </section>
+        <section>
+          <h1>Templates</h1>
+          <h2>Use HTML to describe the DOM</h2>
+          <pre><code class="hljs">
+            <template>
+              <style>
+                @import url(/name-tag.css);
+              </style>
+              <div>
+                <h1>Hi, my name is</h1>
+                <h2>
+                  <content></content>
+                </h2>
+              </div>
+            </template>
+          </code></pre>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>What do Web Components solve?</h1>
+          <div class="fragment">
+            <h2>Composability</h2>
+            <p>We want legos</p>
+          </div>
+          <div class="fragment">
+            <h2>Encapsulation</h2>
+            <p>Markup, style, and behavior don’t leak into the rest of the page</p>
+        </div>
+        <div class="fragment">
+          <h2>Reusability</h2>
+          <p>Stop reinventing the wheel</p>
+        </div>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>A little history...</h1>
+        </section>
+        <section>
+          <h2>1989: HTML introduced by Tim Berners Lee</h2>
+          <p>SGML + hyperlinks</p>
+        </section>
+        <section>
+          <h2>1992 HTML+ by Dave Ragget</h2>
+          <p>Arena browser</p>
+          <p>forms, CHSS, background images, tables</p>
+        </section>
+        <section>
+          <h2>1995 JavaScript & DOM Level 0 from Netscape</h2>
+          <p>Very limited, only a few elements scriptable</p>
+        </section>
+        <section>
+          <h2>1995-1997: Scott Issacs @ Microsoft</h2>
+          <p>CSS 2-D positioning, ActiveX, DHTML, XML Data Islands, iframe</p>
+        </section>
+        <section>
+          <h1>The Dark Age 1997-2004</h1>
+          <h2 class="fragment">1997: HTML Components from Microsoft</h2>
+          <h2 class="fragment">1999: Microsoft wins browser wars?</h2>
+          <p class="fragment">IXmlHttpRequest</p>
+          <h2 class="fragment">A little progress on CSS implementation</h2>
+          <h2 class="fragment">ActionScript</h2>
+          <h2 class="fragment">2000: Mozilla XHR in Gecko (pre-firefox)</h2>
+        </section>
+        <section>
+          <h2>2004: Gmail (Paul Buchheit)</h2>
+          <p>Birth of modern AJAX</p>
+        </section>
+        <section>
+          <h2>2005: Dojo & prototype.js</h2>
+          <h2>2006: jQuery, MooTools, & YUI</h2>
+          <p>Abstracts away the hard parts of DOM & AJAX.</p>
+        </section>
+        <section>
+          <h1>2009+: Javascript Explodes</h1>
+          <h2>node.js, Angular 1, underscore</h2>
+          <h2>Knockout, Backbone, npm</h2>
+          <h2>Ember, React, Polymer</h2>
+          <h2>2016: Vue 2, riot.js, Angular 2</h2>
+         </section>
+      </section>
+      <section>
+        <h1>Why?</h1>
+        <h2 class="fragment">2008: Google Chrome</h2>
+        <h2 class="fragment">2010: Thoughts on Flash by  Steve Jobs</
+        h2>
+      </section>
+      <section>
+        <h1>Web Components</h1>
+        <h2>2012: first Web Components draft spec by Google</h2>
+        <h2>May 2012: Shadow DOM</h2>
+        <h2>February 2013: HTML Templates</h2>
+        <h2>May 2013: Custom Elements & HTML Imports</h2>
+      </section>
+      <section>
+        <section>
+          <h1>Can I use it?</h1>
+          <h2>Templates work in all browsers</h2>
+          <h2>Custom Elements, Shadow DOM, and HTML Imports work in Blink (Chrome, Opera)</h2>
+        </section>
+        <section>
+          <h1>Polyfills</h1>
+          <h2>webcomponents.js</h2>
+          <pre><code class="hljs">
+            <script src="/webcomponents.min.js"></script>
+          </code></pre>
+          <p>formerly Polymer's platform.js</p>
+        </section>
+        <section>
+          <h1>Libraries</h1>
+          <h2>Polymer (Google)</h2>
+          <h2>x-tag (Microsoft)</h2>
+          <h2>SkateJS</h2>
+        </section>
+        </section>
+        <section>
+          <h2>Latest Custom Elements specs <br> October 2016</h2>
+    <pre><code class="hljs">
+customElements.define('name-tag', class extends HTMLElement {
+
+  static get observedAttributes() { return ["json", "url"]; }
+
+  connectedCallback(){ ... } // I used to be attachedCallback
+
+  disconnectedCallback(){ ... } // I used to be detachedCallback
+
+  attributeChangedCallback(){ ... }  // I survived!
+
+})
+    </code></pre>
+</section>
+        </section>
+       </section>
+      <section>
+        <h1>What's next?</h1>
+          <ul>
+            <li>Slot-Based Shadow DOM API</li>
+            <li>CSS variables</li>
+            <li>... ?</li>
+          </ul>
+      </section>
+      <section>
+        <h1>Questions?</h1>
+      </section>
+  </div>
+</div>
+<script src="bower_components/headjs/dist/1.0.0/head.min.js"></script>
+<script src="bower_components/reveal.js/js/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    controls: true,
+    progress: false,
+    history: true,
+    center: true,
+    width: 1920,
+    height: 1080,
+    theme: Reveal.getQueryHash().theme,
+    transition: Reveal.getQueryHash().transition || 'default',
+    // Optional reveal.js plugins
+        dependencies: [
+          { src: '/bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        ]
+  });
+</script>
+</body>
+</html>

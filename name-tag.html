@@ -1,0 +1,52 @@
+<template>
+  <style>
+    div {
+      background-color: red;
+      border: 1px solid red;
+      border-radius: 9px;
+      width: 250px;
+      margin: 10px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #fff;
+    }
+
+    h2 {
+      width: 100%;
+      height: 50px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      background-color: #fff;
+    }
+  </style>
+  <div>
+    <h1>Hi, my name is</h1>
+    <h2>
+      <content></content>
+    </h2>
+  </div>
+</template>
+<script>
+(() => {
+  let doc = document.currentScript.ownerDocument
+  document.registerElement( 'name-tag', class extends HTMLElement {
+    createdCallback(){
+      console.log('created')
+    }
+    attachedCallback(){
+      console.log('attached')
+      let shadow = this.createShadowRoot();
+      let template = doc.querySelector('template')
+      shadow.appendChild(template.content.cloneNode(true));
+    }
+    detachedCallback(){
+      console.log('detached')
+    }
+    attributeChangedCallback(name, oldValue, newValue){
+      console.log(`${name} was changed to ${newValue}`)
+    }
+  });
+})()
+</script>

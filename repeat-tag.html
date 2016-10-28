@@ -1,0 +1,26 @@
+<script>
+  document.registerElement( 'repeat-tag', class extends HTMLElement {
+    createdCallback(){
+      this.template = this.innerHTML
+    }
+    attachedCallback(){
+      this.render()
+    }
+    attributeChangedCallback(name, oldValue, newValue){
+      this.render()
+    }
+    render(){
+        this.innerHTML = '';
+        let data = this.getAttribute('json')
+        if (data) {
+          JSON.parse(data).forEach((item) => {
+            let template = this.template;
+            Object.keys(item).forEach(function (key) {
+              template = template.replace(`{${key}}`, item[key])
+            })
+            this.innerHTML += template
+          })
+        }
+    }
+  });
+</script>

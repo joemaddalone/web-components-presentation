@@ -1,0 +1,13 @@
+<script src="lib/Sortable.min.js"></script>
+<script>
+(() => {
+  document.registerElement( 'sortable-tag', class extends HTMLElement {
+    attachedCallback() {
+      let sorted = document.getElementById( this.getAttribute( 'target' ) )
+      Sortable.create( sorted, {
+        animation: 250
+      } )
+    }
+  } )
+})()
+</script>
