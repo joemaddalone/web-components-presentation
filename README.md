@@ -7,7 +7,7 @@ Web Components 101
 #### 10/27/2017 ####
 
 
-[Demo](https://github.com/joemaddalone/web-components-presentation.git)
+[Demo](https://joemaddalone.github.io/web-components-presentation)
 
 [Slides](https://joemaddalone.github.io/web-components-presentation/slides)
 
