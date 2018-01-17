@@ -4,7 +4,7 @@ Web Components 101
 ========================
 
 ### @ Northwest Chicago Javascript ###
-#### 10/27/2017 ####
+#### 10/27/2016 ####
 
 
 [Demo](https://joemaddalone.github.io/web-components-presentation)
