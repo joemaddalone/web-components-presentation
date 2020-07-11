@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Web Components</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="import" href="my-app.html" />
+  <head>
+    <meta charset="UTF-8" />
+    <title>Web Components</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="import" href="my-app.html" /> -->
+    <script src="lib/Sortable.min.js"></script>
+    <script type="module" src="my-app.js"></script>
   </head>
-<body>
-  <toolbar-tag target="f"></toolbar-tag>
-  <fetch-tag id="f" url="https://swapi.co/api/people/?format=json">
-    <repeat-tag id="r">
-      <div style="float:left">
-        <name-tag>{name}</name-tag>
-      </div>
-    </repeat-tag>
-  </fetch-tag>
-  <sortable-tag target="r"></sortable-tag>
-</body>
+  <body>
+    <toolbar-tag target="f"></toolbar-tag>
+    <fetch-tag id="f" url="https://swapi.dev/api/people/?format=json">
+      <repeat-tag id="r">
+        <div style="float: left;">
+          <name-tag>{name}</name-tag>
+        </div>
+      </repeat-tag>
+    </fetch-tag>
+    <sortable-tag target="r"></sortable-tag>
+  </body>
 </html>

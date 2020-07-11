@@ -1,11 +1,20 @@
-### Code and slides from ###
+### Code and slides from
 
-Web Components 101
-========================
+# Web Components 101
 
-### @ Northwest Chicago Javascript ###
-#### 10/27/2016 ####
+### @ Northwest Chicago Javascript
 
+#### 10/27/2016
+--
+
+
+##### Updated 07/11/2020
+
+I updated all of the code to work with the latest spec which does not include HTML imports. I have left all of the html file versions of the components alongside the new js component files for comparison.
+
+example: `repeat-tag.html -> repeat-tag.js`
+
+--
 
 [Demo](https://joemaddalone.github.io/web-components-presentation)
 
