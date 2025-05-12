@@ -48,7 +48,7 @@ export default window.customElements.define(
     setActive(id, shadow) {
       document
         .getElementById(this.getAttribute("target"))
-        .setAttribute("url", `https://swapi.dev/api/${id}/?format=json`);
+        .setAttribute("url", `https://swapi.tech/api/${id}/?format=json`);
       this.shadowRoot
         .querySelectorAll("button")
         .forEach((btn) => btn.classList.remove("active"));

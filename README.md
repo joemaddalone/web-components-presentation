@@ -14,6 +14,10 @@ I updated all of the code to work with the latest spec which does not include HT
 
 example: `repeat-tag.html -> repeat-tag.js`
 
+##### Updated 05/12/2025
+
+switched swapi url.  will probably need to do this again.
+
 --
 
 [Demo](https://joemaddalone.github.io/web-components-presentation)

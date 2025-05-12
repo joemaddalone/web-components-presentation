@@ -42,7 +42,7 @@
 
       setActive( id, shadow ){
         document.getElementById( this.getAttribute('target') )
-          .setAttribute( 'url', `https://swapi.co/api/${id}/?format=json` );
+          .setAttribute( 'url', `https://swapi.tech/api/${id}/?format=json` );
         shadow.querySelectorAll( 'button' )
           .forEach( btn => btn.classList.remove('active'));
         shadow.getElementById(id).classList.add('active');
